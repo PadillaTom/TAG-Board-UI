@@ -9,7 +9,7 @@ const WebsiteLayout = ({
 	return (
 		<main>
 			<Navbar></Navbar>
-			<EscapeContainer>
+			<EscapeContainer escape={'all'}>
 				<Container>{children}</Container>
 			</EscapeContainer>
 		</main>
