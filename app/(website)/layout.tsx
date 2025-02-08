@@ -1,11 +1,9 @@
-export default function WebsiteLayout({
-  children,
+const WebsiteLayout = ({
+	children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <div>
-      <main>{children}</main>
-    </div>
-  );
-}
+	children: React.ReactNode;
+}>) => {
+	return <main>{children}</main>;
+};
+
+export default WebsiteLayout;
