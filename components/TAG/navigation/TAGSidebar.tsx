@@ -1,5 +1,6 @@
-import { Calendar, Home, Inbox, Menu, Search } from 'lucide-react';
+'use client';
 
+import { Calendar, Home, Inbox, Menu, Search } from 'lucide-react';
 import {
 	Sidebar,
 	SidebarContent,
@@ -10,6 +11,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 	SidebarTrigger,
+	useSidebar,
 } from '@/components/ui/sidebar';
 import { Container } from '../../library/structure';
 import { WEBSITE_ROUTES } from '../../../constants/routes';
@@ -41,8 +43,9 @@ const items = [
 ];
 
 const TAGSidebar = () => {
+	const { setOpenMobile } = useSidebar();
 	return (
-		<aside className="sm:hidden" aria-label="Menú principal de TAG Board">
+		<aside className="sm:hidden">
 			<nav className="w-full h-[5rem] bg-white fixed top-0 drop-shadow-md z-30">
 				<Container className="h-full flex flex-row items-center justify-between">
 					<div className="relative flex flex-col items-center justify-center">
@@ -52,17 +55,17 @@ const TAGSidebar = () => {
 					<TAGLogo></TAGLogo>
 				</Container>
 			</nav>
-			<Sidebar>
+			<Sidebar collapsible="offcanvas">
 				<SidebarContent>
 					<SidebarGroup>
 						<SidebarGroupLabel>Tag Board</SidebarGroupLabel>
 						<SidebarGroupContent>
-							<SidebarMenu className="gap-4">
+							<SidebarMenu className="gap-6 mt-6">
 								{items.map((item) => (
 									<SidebarMenuItem key={item.title}>
-										<SidebarMenuButton asChild>
+										<SidebarMenuButton asChild onClick={() => setOpenMobile(false)}>
 											<Link href={item.url}>
-												<span className="text-3xl">{item.title}</span>
+												<span className="text-xl font-normal text-primary">{item.title}</span>
 											</Link>
 										</SidebarMenuButton>
 									</SidebarMenuItem>

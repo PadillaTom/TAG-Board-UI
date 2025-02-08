@@ -13,7 +13,6 @@ import { Separator } from '@/components/ui/separator';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { DialogTitle } from '@radix-ui/react-dialog';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
@@ -120,7 +119,7 @@ const SidebarProvider = React.forwardRef<
 							...style,
 						} as React.CSSProperties
 					}
-					className={cn('group/sidebar-wrapper flex min-h-svh w-full has-[[data-variant=inset]]:bg-sidebar', className)}
+					className={cn('', className)}
 					ref={ref}
 					{...props}
 				>

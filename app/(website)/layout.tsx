@@ -1,5 +1,5 @@
-import { Container, EscapeContainer } from '../../components/library/structure';
-import { Navbar, Sidebar } from '../../components/TAG/navigation';
+import { EscapeContainer } from '../../components/library/structure';
+import { Navbar, TAGSidebar } from '../../components/TAG/navigation';
 
 const WebsiteLayout = ({
 	children,
@@ -9,10 +9,8 @@ const WebsiteLayout = ({
 	return (
 		<main>
 			<Navbar></Navbar>
-			<Sidebar></Sidebar>
-			<EscapeContainer escape={'all'}>
-				<Container>{children}</Container>
-			</EscapeContainer>
+			<TAGSidebar></TAGSidebar>
+			<EscapeContainer escape={'all'}>{children}</EscapeContainer>
 		</main>
 	);
 };
