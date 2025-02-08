@@ -1,4 +1,5 @@
 import { Container, EscapeContainer } from '../../components/library/structure';
+import { Navbar } from '../../components/navigation';
 
 const WebsiteLayout = ({
 	children,
@@ -7,6 +8,7 @@ const WebsiteLayout = ({
 }>) => {
 	return (
 		<main>
+			<Navbar></Navbar>
 			<EscapeContainer>
 				<Container>{children}</Container>
 			</EscapeContainer>

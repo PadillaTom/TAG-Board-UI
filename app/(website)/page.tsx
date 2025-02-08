@@ -3,8 +3,7 @@ import { ModeToggle } from '../../components/library/toggle';
 
 const HomePage = () => {
 	return (
-		<section className="flex flex-col gap-2 items-center">
-			<h2>TAG Board</h2>
+		<section className="min-h-[150vh] flex flex-col gap-2 items-center">
 			<h2>Homepage</h2>
 			<LinkButton route={'/'} variant={'default'}>
 				Default o Primary

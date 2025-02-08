@@ -18,10 +18,9 @@ export const USER_ROUTES = {
 export const navLinks = {
 	guest: [
 		{ label: 'Inicio', href: WEBSITE_ROUTES.HOME },
-		{ label: 'Iniciar Sesión', href: WEBSITE_ROUTES.LOGIN },
-		{ label: 'Regístrate!', href: WEBSITE_ROUTES.REGISTER },
 		{ label: 'Acerca de nosotros', href: WEBSITE_ROUTES.ABOUT },
 		{ label: 'Contacto', href: WEBSITE_ROUTES.CONTACT },
+		{ label: 'Entrar', href: WEBSITE_ROUTES.LOGIN },
 	],
 	user: [
 		{ label: 'Inicio', href: USER_ROUTES.DASHBOARD },
