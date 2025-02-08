@@ -1,12 +1,13 @@
 'use client';
 
 import { ThemeProvider } from './theme-provider';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
 		<>
 			<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-				{children}
+				<SidebarProvider>{children}</SidebarProvider>
 			</ThemeProvider>
 		</>
 	);
