@@ -1,5 +1,5 @@
-import Container from "../../components/library/structure/Container";
-import ModeToggle from "../../components/library/toggle/ModeToggle";
+import { Container } from "../../components/library/structure";
+import { ModeToggle } from "../../components/library/toggle";
 
 const HomePage = () => {
 	return (
