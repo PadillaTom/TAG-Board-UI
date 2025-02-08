@@ -1,5 +1,5 @@
 import { Container, EscapeContainer } from '../../components/library/structure';
-import { Navbar, Sidebar } from '../../components/navigation';
+import { Navbar, Sidebar } from '../../components/TAG/navigation';
 
 const WebsiteLayout = ({
 	children,

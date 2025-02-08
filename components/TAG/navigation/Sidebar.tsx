@@ -11,12 +11,10 @@ import {
 	SidebarMenuItem,
 	SidebarTrigger,
 } from '@/components/ui/sidebar';
-import { Container } from '../library/structure';
-import { WEBSITE_ROUTES } from '../../constants/routes';
-
-import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
-import { SheetDescription, SheetTitle } from '../ui/sheet';
-import { DialogDescription, DialogTitle } from '@radix-ui/react-dialog';
+import { Container } from '../../library/structure';
+import { WEBSITE_ROUTES } from '../../../constants/routes';
+import TAGLogo from '../logo/TAGLogo';
+import Link from 'next/link';
 
 // Menu items.
 const items = [
@@ -51,10 +49,7 @@ const TAGSidebar = () => {
 						<Menu size={'30px'}></Menu>
 						<SidebarTrigger className="opacity-0 absolute top-0 left-0 w-full h-full" />
 					</div>
-					<div className="flex gap-2">
-						<h2>TAG</h2>
-						<span>Board</span>
-					</div>
+					<TAGLogo></TAGLogo>
 				</Container>
 			</nav>
 			<Sidebar>
@@ -62,14 +57,13 @@ const TAGSidebar = () => {
 					<SidebarGroup>
 						<SidebarGroupLabel>Tag Board</SidebarGroupLabel>
 						<SidebarGroupContent>
-							<SidebarMenu>
+							<SidebarMenu className="gap-4">
 								{items.map((item) => (
 									<SidebarMenuItem key={item.title}>
 										<SidebarMenuButton asChild>
-											<a href={item.url}>
-												<item.icon />
-												<span>{item.title}</span>
-											</a>
+											<Link href={item.url}>
+												<span className="text-3xl">{item.title}</span>
+											</Link>
 										</SidebarMenuButton>
 									</SidebarMenuItem>
 								))}

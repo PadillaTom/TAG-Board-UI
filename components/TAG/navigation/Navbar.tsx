@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { navLinks } from '../../constants/routes';
-import { LinkButton } from '../library/button';
-import { Container } from '../library/structure';
+import { navLinks } from '../../../constants/routes';
+import { LinkButton } from '../../library/button';
+import { Container } from '../../library/structure';
+import { TAGLogo } from '../logo';
 
 const Navbar = () => {
 	const user = false;
@@ -11,10 +11,7 @@ const Navbar = () => {
 	return (
 		<nav className="hidden w-full h-[5rem] bg-white fixed top-0 drop-shadow-md sm:flex flex-row items-center justify-center z-30">
 			<Container className="flex items-center justify-between">
-				<Link href={links[0].href} className="flex flex-row gap-2">
-					<h2>TAG</h2>
-					<p>Board</p>
-				</Link>
+				<TAGLogo></TAGLogo>
 				{!user && (
 					<div className="flex flex-row gap-3">
 						{links.slice(1, -1).map(({ label, href }, index) => {
