@@ -9,8 +9,8 @@ interface EscapeContainerProps extends React.HTMLAttributes<HTMLDivElement>, Var
 const containerVariants = cva('m-auto', {
 	variants: {
 		escape: {
-			all: 'pt-[5.8rem] pb-[8rem]',
-			navbar: 'pt-[5.8rem]',
+			all: 'pt-[6rem] pb-[8rem]',
+			navbar: 'pt-[6rem]',
 			footer: 'pb-[8rem]',
 		},
 	},
