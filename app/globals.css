@@ -4,58 +4,48 @@
 
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
-		--card: 0 0% 100%;
-		--card-foreground: 240 10% 3.9%;
-		--popover: 0 0% 100%;
-		--popover-foreground: 240 10% 3.9%;
-		--primary: 240 5.9% 10%;
-		--primary-foreground: 0 0% 98%;
-		--secondary: 240 4.8% 95.9%;
-		--secondary-foreground: 240 5.9% 10%;
-		--muted: 240 4.8% 95.9%;
-		--muted-foreground: 240 3.8% 46.1%;
-		--accent: 240 4.8% 95.9%;
-		--accent-foreground: 240 5.9% 10%;
-		--destructive: 0 84.2% 60.2%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 5.9% 90%;
-		--input: 240 5.9% 90%;
-		--ring: 240 10% 3.9%;
-		--chart-1: 12 76% 61%;
-		--chart-2: 173 58% 39%;
-		--chart-3: 197 37% 24%;
-		--chart-4: 43 74% 66%;
-		--chart-5: 27 87% 67%;
-		--radius: 0.5rem;
+		--background: 220 30% 98%; /* Fondo claro con tono pastel */
+		--foreground: 220 10% 20%; /* Texto oscuro gris-azulado */
+		--card: 0 0% 100%; /* Blanco puro para tarjetas */
+		--card-foreground: 220 15% 15%; /* Texto oscuro para tarjetas */
+		--popover: 0 0% 100%; /* Fondo de popover */
+		--popover-foreground: 220 15% 15%; /* Texto oscuro en popovers */
+		--primary: 264 80% 55%; /* Morado vibrante */
+		--primary-foreground: 0 0% 100%; /* Blanco en elementos primarios */
+		--secondary: 180 40% 85%; /* Verde agua claro para elementos secundarios */
+		--secondary-foreground: 220 10% 20%; /* Texto oscuro en elementos secundarios */
+		--muted: 220 10% 90%; /* Azul grisáceo claro para fondos atenuados */
+		--muted-foreground: 220 10% 50%; /* Texto gris en elementos atenuados */
+		--accent: 12 80% 60%; /* Naranja vibrante para resaltar */
+		--accent-foreground: 0 0% 100%; /* Blanco en elementos de acento */
+		--destructive: 0 100% 50%; /* Rojo para acciones destructivas */
+		--destructive-foreground: 0 0% 100%; /* Blanco en acciones destructivas */
+		--border: 220 10% 80%; /* Bordes azul grisáceo */
+		--input: 220 10% 98%; /* Fondo de inputs */
+		--ring: 264 80% 55%; /* Morado vibrante para anillos de enfoque */
+		--radius: 0.5rem; /* Radio de borde */
 	}
 
 	.dark {
-		--background: 240 10% 3.9%;
-		--foreground: 0 0% 98%;
-		--card: 240 10% 3.9%;
-		--card-foreground: 0 0% 98%;
-		--popover: 240 10% 3.9%;
-		--popover-foreground: 0 0% 98%;
-		--primary: 0 0% 98%;
-		--primary-foreground: 240 5.9% 10%;
-		--secondary: 240 3.7% 15.9%;
-		--secondary-foreground: 0 0% 98%;
-		--muted: 240 3.7% 15.9%;
-		--muted-foreground: 240 5% 64.9%;
-		--accent: 240 3.7% 15.9%;
-		--accent-foreground: 0 0% 98%;
-		--destructive: 0 62.8% 30.6%;
-		--destructive-foreground: 0 0% 98%;
-		--border: 240 3.7% 15.9%;
-		--input: 240 3.7% 15.9%;
-		--ring: 240 4.9% 83.9%;
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
+		--background: 220 15% 10%; /* Fondo oscuro azul grisáceo */
+		--foreground: 0 0% 95%; /* Texto claro */
+		--card: 220 20% 15%; /* Fondo de tarjetas en modo oscuro */
+		--card-foreground: 0 0% 95%; /* Texto en tarjetas */
+		--popover: 220 20% 15%; /* Fondo de popover oscuro */
+		--popover-foreground: 0 0% 95%; /* Texto en popovers */
+		--primary: 264 80% 65%; /* Morado más claro en modo oscuro */
+		--primary-foreground: 0 0% 100%; /* Texto blanco en primarios */
+		--secondary: 180 40% 25%; /* Verde agua oscuro */
+		--secondary-foreground: 0 0% 95%; /* Texto claro en secundarios */
+		--muted: 220 20% 20%; /* Azul grisáceo oscuro */
+		--muted-foreground: 220 10% 65%; /* Texto gris claro */
+		--accent: 12 80% 50%; /* Naranja más oscuro */
+		--accent-foreground: 0 0% 100%; /* Blanco en elementos de acento */
+		--destructive: 0 80% 40%; /* Rojo más oscuro para acciones destructivas */
+		--destructive-foreground: 0 0% 95%; /* Texto claro en destructivas */
+		--border: 220 20% 25%; /* Bordes azul grisáceo oscuro */
+		--input: 220 20% 10%; /* Fondo de inputs oscuros */
+		--ring: 264 80% 65%; /* Morado más claro en modo oscuro */
 	}
 }
 
