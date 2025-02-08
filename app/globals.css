@@ -4,48 +4,48 @@
 
 @layer base {
 	:root {
-		--background: 220 30% 98%; /* Fondo claro con tono pastel */
-		--foreground: 220 10% 20%; /* Texto oscuro gris-azulado */
-		--card: 0 0% 100%; /* Blanco puro para tarjetas */
-		--card-foreground: 220 15% 15%; /* Texto oscuro para tarjetas */
-		--popover: 0 0% 100%; /* Fondo de popover */
-		--popover-foreground: 220 15% 15%; /* Texto oscuro en popovers */
-		--primary: 264 80% 55%; /* Morado vibrante */
-		--primary-foreground: 0 0% 100%; /* Blanco en elementos primarios */
-		--secondary: 180 40% 85%; /* Verde agua claro para elementos secundarios */
-		--secondary-foreground: 220 10% 20%; /* Texto oscuro en elementos secundarios */
-		--muted: 220 10% 90%; /* Azul grisáceo claro para fondos atenuados */
-		--muted-foreground: 220 10% 50%; /* Texto gris en elementos atenuados */
-		--accent: 12 80% 60%; /* Naranja vibrante para resaltar */
-		--accent-foreground: 0 0% 100%; /* Blanco en elementos de acento */
-		--destructive: 0 100% 50%; /* Rojo para acciones destructivas */
-		--destructive-foreground: 0 0% 100%; /* Blanco en acciones destructivas */
-		--border: 220 10% 80%; /* Bordes azul grisáceo */
-		--input: 220 10% 98%; /* Fondo de inputs */
-		--ring: 264 80% 55%; /* Morado vibrante para anillos de enfoque */
-		--radius: 0.5rem; /* Radio de borde */
+		--background: 220 30% 98%; /* Light pastel blue background */
+		--foreground: 220 10% 20%; /* Dark grayish-blue text */
+		--card: 0 0% 100%; /* Pure white for cards */
+		--card-foreground: 220 15% 15%; /* Dark text for cards */
+		--popover: 0 0% 100%; /* Popover background */
+		--popover-foreground: 220 15% 15%; /* Popover text */
+		--primary: 205 90% 72%; /* Deep blue primary */
+		--primary-foreground: 0 0% 100%; /* White text on primary */
+		--secondary: 220 60% 70%; /* Lighter blue secondary */
+		--secondary-foreground: 220 10% 20%; /* Dark text on secondary */
+		--muted: 220 20% 90%; /* Soft grayish-blue muted */
+		--muted-foreground: 220 10% 50%; /* Gray text on muted */
+		--accent: 180 70% 45%; /* Vibrant teal accent */
+		--accent-foreground: 0 0% 100%; /* White text on accent */
+		--destructive: 0 70% 50%; /* Clear red destructive */
+		--destructive-foreground: 0 0% 100%; /* White text on destructive */
+		--border: 220 10% 80%; /* Grayish-blue borders */
+		--input: 220 10% 98%; /* Input backgrounds */
+		--ring: 220 60% 50%; /* Deep blue focus rings */
+		--radius: 0.5rem; /* Border radius */
 	}
 
 	.dark {
-		--background: 220 15% 10%; /* Fondo oscuro azul grisáceo */
-		--foreground: 0 0% 95%; /* Texto claro */
-		--card: 220 20% 15%; /* Fondo de tarjetas en modo oscuro */
-		--card-foreground: 0 0% 95%; /* Texto en tarjetas */
-		--popover: 220 20% 15%; /* Fondo de popover oscuro */
-		--popover-foreground: 0 0% 95%; /* Texto en popovers */
-		--primary: 264 80% 65%; /* Morado más claro en modo oscuro */
-		--primary-foreground: 0 0% 100%; /* Texto blanco en primarios */
-		--secondary: 180 40% 25%; /* Verde agua oscuro */
-		--secondary-foreground: 0 0% 95%; /* Texto claro en secundarios */
-		--muted: 220 20% 20%; /* Azul grisáceo oscuro */
-		--muted-foreground: 220 10% 65%; /* Texto gris claro */
-		--accent: 12 80% 50%; /* Naranja más oscuro */
-		--accent-foreground: 0 0% 100%; /* Blanco en elementos de acento */
-		--destructive: 0 80% 40%; /* Rojo más oscuro para acciones destructivas */
-		--destructive-foreground: 0 0% 95%; /* Texto claro en destructivas */
-		--border: 220 20% 25%; /* Bordes azul grisáceo oscuro */
-		--input: 220 20% 10%; /* Fondo de inputs oscuros */
-		--ring: 264 80% 65%; /* Morado más claro en modo oscuro */
+		--background: 220 15% 10%; /* Dark blue-gray background */
+		--foreground: 0 0% 95%; /* Light text */
+		--card: 220 20% 15%; /* Dark card background */
+		--card-foreground: 0 0% 95%; /* Light text for cards */
+		--popover: 220 20% 15%; /* Dark popover background */
+		--popover-foreground: 0 0% 95%; /* Light text for popovers */
+		--primary: 205 90% 63%; /* Lighter deep blue for dark mode */
+		--primary-foreground: 0 0% 100%; /* White text on primary */
+		--secondary: 220 60% 40%; /* Darker blue secondary */
+		--secondary-foreground: 0 0% 95%; /* Light text on secondary */
+		--muted: 220 20% 20%; /* Dark muted background */
+		--muted-foreground: 220 10% 65%; /* Light gray text on muted */
+		--accent: 180 60% 50%; /* Lighter teal accent */
+		--accent-foreground: 0 0% 100%; /* White text on accent */
+		--destructive: 0 70% 40%; /* Darker red destructive */
+		--destructive-foreground: 0 0% 95%; /* Light text on destructive */
+		--border: 220 20% 25%; /* Dark grayish-blue borders */
+		--input: 220 20% 10%; /* Dark input backgrounds */
+		--ring: 220 60% 60%; /* Lighter deep blue focus rings */
 	}
 }
 
