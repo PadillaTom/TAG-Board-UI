@@ -1,4 +1,4 @@
-import { ModeToggle } from "../../components/library/toggle";
+import { ModeToggle } from '../../components/library/toggle';
 
 const HomePage = () => {
 	return (

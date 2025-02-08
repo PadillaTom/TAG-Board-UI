@@ -1,21 +1,21 @@
-import { cva, VariantProps } from "class-variance-authority";
-import { cn } from "@/lib/utils";
+import { cva, VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {
 	children: React.ReactNode;
 	className?: string;
 }
 
-const containerVariants = cva("m-auto", {
+const containerVariants = cva('m-auto', {
 	variants: {
 		variant: {
-			normal: "w-[90%]",
-			small: "w-[80%]",
-			full: "w-full",
+			normal: 'w-[90%]',
+			small: 'w-[80%]',
+			full: 'w-full',
 		},
 	},
 	defaultVariants: {
-		variant: "normal",
+		variant: 'normal',
 	},
 });
 

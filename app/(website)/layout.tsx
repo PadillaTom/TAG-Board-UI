@@ -1,4 +1,4 @@
-import { Container, EscapeContainer } from "../../components/library/structure";
+import { Container, EscapeContainer } from '../../components/library/structure';
 
 const WebsiteLayout = ({
 	children,

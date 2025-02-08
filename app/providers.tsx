@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { ThemeProvider } from "./theme-provider";
+import { ThemeProvider } from './theme-provider';
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
 	return (
