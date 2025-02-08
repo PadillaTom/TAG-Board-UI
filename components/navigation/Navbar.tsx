@@ -9,7 +9,7 @@ const Navbar = () => {
 	const links = user ? navLinks.user : navLinks.guest;
 
 	return (
-		<nav className="w-full h-[5rem] bg-white fixed top-0 drop-shadow-md flex flex-row items-center justify-center z-30">
+		<nav className="hidden w-full h-[5rem] bg-white fixed top-0 drop-shadow-md sm:flex flex-row items-center justify-center z-30">
 			<Container className="flex items-center justify-between">
 				<Link href={links[0].href} className="flex flex-row gap-2">
 					<h2>TAG</h2>
