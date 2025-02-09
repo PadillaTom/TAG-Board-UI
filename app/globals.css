@@ -98,3 +98,39 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+@layer components {
+	/* 
+	* ================================= 
+	* Forms
+	* ================================= 
+	*/
+
+	.forms-max-width {
+		@apply max-w-[550px] !important;
+	}
+
+	.form-title {
+		@apply text-xl font-bold text-center whitespace-nowrap text-white !important;
+	}
+
+	.form-input-text {
+		@apply rounded-lg placeholder:text-gray-400 !important;
+	}
+
+	.form-input-textarea {
+		@apply py-3 px-4  placeholder:text-gray-400 resize-none !important;
+	}
+
+	.form-input-text-validation-error {
+		@apply border border-[color:--destructive] !important;
+	}
+
+	.form-message-validation-error {
+		@apply pl-3 mt-1 text-xs !important;
+	}
+
+	.form-response-error {
+		@apply pl-3 mt-3 text-base text-center font-medium tracking-wide mb-4 !important;
+	}
+}
