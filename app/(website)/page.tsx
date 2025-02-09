@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import { Container } from '../../components/library/structure';
 import Link from 'next/link';
 import { WEBSITE_ROUTES } from '../../constants/routes';
 
 const HomePage = () => {
 	return (
-		<Container className="bg-background text-foreground flex flex-col items-center">
-			<section className="h-[90vh] sm:h-[80vh] flex flex-col items-center justify-center text-center gap-6">
+		<div className="flex flex-col items-center">
+			<section className="h-[80vh] min-h-[550px] flex flex-col items-center justify-center text-center gap-6">
 				{/* Encabezado */}
 				<h1 className="text-4xl font-bold md:text-5xl">
 					Gestiona tus proyectos con <span className="text-primary">TAG Board</span>
@@ -33,7 +32,7 @@ const HomePage = () => {
 			</section>
 
 			{/* Sección de Beneficios */}
-			<div className="flex flex-col items-center gap-[5rem]">
+			<div className="flex flex-col items-center gap-[2rem] sm:gap-[5rem]">
 				<section className="w-full max-w-6xl mt-16 flex flex-col items-center gap-10">
 					<h2 className="text-3xl font-semibold">¿Por qué TAG Board?</h2>
 					<div className="flex flex-col md:flex-row gap-8 justify-center">
@@ -114,7 +113,7 @@ const HomePage = () => {
 					</div>
 				</section>
 			</div>
-		</Container>
+		</div>
 	);
 };
 
