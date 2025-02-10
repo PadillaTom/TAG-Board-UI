@@ -15,16 +15,14 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log('Loading ', loading);
-		console.log('User ', user);
-
-		if (!loading && (!user || user.role !== ROLE.USER || user.role !== ROLE.ADMIN)) {
+		if (!loading && (!user || (user.role !== ROLE.USER && user.role !== ROLE.ADMIN))) {
+			console.log('⏩ Protected Route: Redirecting to HOME...');
 			router.push(WEBSITE_ROUTES.HOME);
 		}
 	}, [user, loading, router]);
 
 	if (loading) {
-		return <h2>Loading...</h2>; // TODO - Replace with a proper loading component
+		return <h2>Loading...</h2>; // TODO: Replace with a proper loading component
 	}
 
 	return <>{children}</>;
