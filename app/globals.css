@@ -111,15 +111,19 @@
 	}
 
 	.form-title {
-		@apply text-2xl font-normal text-center whitespace-nowrap !important;
+		@apply text-3xl font-extralight tracking-normal self-start sm:self-center whitespace-nowrap !important;
+	}
+
+	.label-form-input-text {
+		@apply text-base font-light !important;
 	}
 
 	.form-input-text {
-		@apply rounded-lg placeholder:text-gray-400 border-gray-300 !important;
+		@apply py-[21px] text-base rounded-lg placeholder:text-gray-400 border-gray-300 !important;
 	}
 
 	.form-input-textarea {
-		@apply py-3 px-4  placeholder:text-gray-400 border-gray-300  resize-none !important;
+		@apply py-[21px] px-4 text-base placeholder:text-gray-400 border-gray-300  resize-none !important;
 	}
 
 	.form-input-text-validation-error {

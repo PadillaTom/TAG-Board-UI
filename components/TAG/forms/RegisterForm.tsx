@@ -24,14 +24,14 @@ const RegisterForm = () => {
 
 	return (
 		<Form {...form}>
-			<form className="forms-max-width flex flex-col gap-2" onSubmit={form.handleSubmit(handleSubmit)}>
+			<form className="forms-max-width flex flex-col gap-4" onSubmit={form.handleSubmit(handleSubmit)}>
 				{/* Username */}
 				<FormField
 					name="username"
 					control={form.control}
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
+							<FormLabel className="label-form-input-text">Email</FormLabel>
 							<FormControl>
 								<Input
 									{...field}
@@ -52,7 +52,7 @@ const RegisterForm = () => {
 					control={form.control}
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Contraseña</FormLabel>
+							<FormLabel className="label-form-input-text">Contraseña</FormLabel>
 							<FormControl>
 								<Input
 									{...field}
@@ -73,7 +73,7 @@ const RegisterForm = () => {
 					control={form.control}
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Confirmar contraseña</FormLabel>
+							<FormLabel className="label-form-input-text">Confirmar contraseña</FormLabel>
 							<FormControl>
 								<Input
 									{...field}
