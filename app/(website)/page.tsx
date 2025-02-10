@@ -5,7 +5,7 @@ import { WEBSITE_ROUTES } from '../../constants/routes';
 const HomePage = () => {
 	return (
 		<div className="flex flex-col items-center pt-6 md:pt-16">
-			<section className="h-[80vh] min-h-[550px] flex flex-col items-center justify-center text-center gap-6">
+			<div className="h-[80vh] min-h-[550px] flex flex-col items-center justify-center text-center gap-6">
 				{/* Encabezado */}
 				<h1 className="text-4xl font-bold md:text-5xl">
 					Gestiona tus proyectos con <span className="text-primary">TAG Board</span>
@@ -29,11 +29,11 @@ const HomePage = () => {
 						/>
 					</div>
 				</div>
-			</section>
+			</div>
 
 			{/* Sección de Beneficios */}
 			<div className="flex flex-col items-center gap-[2rem] sm:gap-[5rem]">
-				<section className="w-full max-w-6xl mt-16 flex flex-col items-center gap-10">
+				<div className="w-full max-w-6xl mt-16 flex flex-col items-center gap-10">
 					<h2 className="text-3xl font-semibold">¿Por qué TAG Board?</h2>
 					<div className="flex flex-col md:flex-row gap-8 justify-center">
 						{/* Tarjeta 1 */}
@@ -61,10 +61,10 @@ const HomePage = () => {
 							</p>
 						</div>
 					</div>
-				</section>
+				</div>
 
 				{/* Sección de Funciones Destacadas */}
-				<section className="w-full max-w-6xl mt-16 flex flex-col items-center gap-8">
+				<div className="w-full max-w-6xl mt-16 flex flex-col items-center gap-8">
 					<h2 className="text-3xl font-semibold text-center">Funciones que Te Encantarán</h2>
 					<ul className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4 max-w-4xl">
 						<li className="p-4 bg-card rounded-md shadow-md text-card-foreground">
@@ -95,10 +95,10 @@ const HomePage = () => {
 							</p>
 						</li>
 					</ul>
-				</section>
+				</div>
 
 				{/* CTA Principal */}
-				<section className="w-full max-w-4xl mt-16 text-center">
+				<div className="w-full max-w-4xl mt-16 text-center">
 					<h2 className="text-3xl font-semibold mb-4">¡Empieza Hoy Mismo!</h2>
 					<p className="text-muted-foreground mb-8">
 						Crea un equipo, invita a tus colaboradores y comienza a organizar tus tareas en minutos.
@@ -111,7 +111,7 @@ const HomePage = () => {
 							Crear Cuenta Gratis
 						</Link>
 					</div>
-				</section>
+				</div>
 			</div>
 		</div>
 	);

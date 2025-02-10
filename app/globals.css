@@ -141,19 +141,19 @@
 	}
 
 	.label-form-input-text {
-		@apply text-base font-light !important;
+		@apply text-sm font-light !important;
 	}
 
 	.form-input-text {
-		@apply py-[19px] text-sm rounded-lg placeholder:text-gray-400 border-gray-300 !important;
+		@apply py-[18px] text-sm rounded-lg placeholder:text-gray-400 border-gray-300 !important;
 	}
 
 	.form-input-textarea {
-		@apply py-[21px] px-4 text-sm placeholder:text-gray-400 border-gray-300  resize-none !important;
+		@apply py-[18px] px-4 text-sm placeholder:text-gray-400 border-gray-300  resize-none !important;
 	}
 
 	.form-input-text-validation-error {
-		@apply border border-[color:--destructive] !important;
+		@apply border border-destructive !important;
 	}
 
 	.form-message-validation-error {

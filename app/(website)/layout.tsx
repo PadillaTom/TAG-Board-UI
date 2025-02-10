@@ -7,13 +7,13 @@ const WebsiteLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<main>
+		<>
 			<Navbar></Navbar>
 			<TAGSidebar></TAGSidebar>
 			<EscapeContainer escape={'all'}>
 				<Container className="bg-background text-foreground">{children}</Container>
 			</EscapeContainer>
-		</main>
+		</>
 	);
 };
 
