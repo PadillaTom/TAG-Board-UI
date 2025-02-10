@@ -9,23 +9,25 @@ import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
 import { registerUser } from '../../../actions/authentication_actions';
 import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { USER_ROUTES } from '../../../constants/routes';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
-	const { user, updateUser } = useAuth();
+	const { updateUser } = useAuth();
+	const router = useRouter();
 
 	const form = useForm<RegisterFormData>({
 		resolver: zodResolver(registerSchema),
 		defaultValues: registerFormDefaultValues,
 	});
 
-	console.log(user);
-
 	const handleSubmit = (values: RegisterFormData) => {
 		startTransition(async () => {
 			registerUser(values)
 				.then((response) => {
 					updateUser(response.jwt);
+					router.push(USER_ROUTES.PROFILE);
 				})
 				.catch((error) =>
 					form.setError('root', {
