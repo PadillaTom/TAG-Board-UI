@@ -7,6 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
+import { registerUser } from '../../../actions/authentication_actions';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
@@ -16,9 +17,18 @@ const RegisterForm = () => {
 		defaultValues: registerFormDefaultValues,
 	});
 
-	const handleSubmit = (values: RegisterFormData) => {
-		startTransition(() => {
-			console.log(values);
+	const handleSubmit = (values: FormData) => {
+		startTransition(async () => {
+			registerUser(values)
+				.then((i) => {
+					console.log(i);
+				})
+				.catch((error) =>
+					form.setError('root', {
+						type: 'manual',
+						message: (error as Error).message,
+					}),
+				);
 		});
 	};
 
@@ -95,7 +105,7 @@ const RegisterForm = () => {
 					Enviar
 				</Button>
 				{form.formState.errors.root && (
-					<FormMessage className="form-response-error ">{form.formState.errors.root.message}</FormMessage>
+					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
 				)}
 			</form>
 		</Form>

@@ -161,6 +161,6 @@
 	}
 
 	.form-response-error {
-		@apply pl-3 mt-3 text-base text-center font-medium tracking-wide mb-4 !important;
+		@apply mt-1 text-base text-center font-extralight !important;
 	}
 }

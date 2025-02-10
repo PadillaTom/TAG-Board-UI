@@ -27,7 +27,3 @@ export const navLinks = {
 		{ label: 'Mi Perfil', href: USER_ROUTES.PROFILE },
 	],
 };
-
-// ================================
-//  Env Variables
-// ================================
