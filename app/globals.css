@@ -102,6 +102,32 @@
 @layer components {
 	/* 
 	* ================================= 
+	* Buttons
+	* ================================= 
+	*/
+
+	.button-fill {
+		@apply rounded-lg py-5 font-extralight text-base tracking-wider border-none !important;
+	}
+
+	.button-fill-dark {
+		@apply rounded-full p-5 border-none bg-[#353535] text-white w-full !important;
+	}
+
+	.button-outline {
+		@apply rounded-full p-5 bg-transparent border-white border-[1px] text-white w-full !important;
+	}
+
+	.button-fill-primary {
+		@apply w-full p-5 bg-[color:--primary-color] border-[color:--primary-color] font-semibold rounded-full !important;
+	}
+
+	.button-input {
+		@apply rounded-full p-5 border-[#353535] bg-[#353535] placeholder:text-gray-400 !important;
+	}
+
+	/* 
+	* ================================= 
 	* Forms
 	* ================================= 
 	*/
@@ -119,11 +145,11 @@
 	}
 
 	.form-input-text {
-		@apply py-[21px] text-base rounded-lg placeholder:text-gray-400 border-gray-300 !important;
+		@apply py-[19px] text-sm rounded-lg placeholder:text-gray-400 border-gray-300 !important;
 	}
 
 	.form-input-textarea {
-		@apply py-[21px] px-4 text-base placeholder:text-gray-400 border-gray-300  resize-none !important;
+		@apply py-[21px] px-4 text-sm placeholder:text-gray-400 border-gray-300  resize-none !important;
 	}
 
 	.form-input-text-validation-error {
