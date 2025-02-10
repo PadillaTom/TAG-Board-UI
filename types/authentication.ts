@@ -12,7 +12,13 @@ export interface RegisterRequest {
 export interface AuthResponse {
 	jwt: string;
 }
-
 export interface JwtCookieData {
-	token: string;
+	role: string | null;
+	token: string | null;
+}
+
+export interface AuthenticationContextType {
+	user: JwtCookieData;
+	updateUser: (token: string) => void;
+	logout: () => void;
 }

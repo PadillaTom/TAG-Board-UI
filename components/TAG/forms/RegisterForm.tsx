@@ -8,20 +8,24 @@ import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
 import { registerUser } from '../../../actions/authentication_actions';
+import { useAuth } from '@/context/AuthContext';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
+	const { user, updateUser } = useAuth();
 
 	const form = useForm<RegisterFormData>({
 		resolver: zodResolver(registerSchema),
 		defaultValues: registerFormDefaultValues,
 	});
 
-	const handleSubmit = (values: FormData) => {
+	console.log(user);
+
+	const handleSubmit = (values: RegisterFormData) => {
 		startTransition(async () => {
 			registerUser(values)
-				.then((i) => {
-					console.log(i);
+				.then((response) => {
+					updateUser(response.jwt);
 				})
 				.catch((error) =>
 					form.setError('root', {
