@@ -46,7 +46,7 @@ const TAGSidebar = () => {
 	const { setOpenMobile } = useSidebar();
 	return (
 		<aside className="sm:hidden">
-			<nav className="w-full h-[5rem] bg-white fixed top-0 drop-shadow-md z-30">
+			<nav className="w-full h-[5rem] bg-white fixed top-0 drop-shadow-sm z-30">
 				<Container className="h-full flex flex-row items-center justify-between">
 					<div className="relative flex flex-col items-center justify-center">
 						<Menu size={'30px'}></Menu>

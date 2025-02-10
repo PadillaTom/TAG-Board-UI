@@ -3,7 +3,7 @@
 import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
@@ -24,13 +24,14 @@ const RegisterForm = () => {
 
 	return (
 		<Form {...form}>
-			<form className="w-full" onSubmit={form.handleSubmit(handleSubmit)}>
+			<form className="forms-max-width flex flex-col gap-2" onSubmit={form.handleSubmit(handleSubmit)}>
 				{/* Username */}
 				<FormField
 					name="username"
 					control={form.control}
 					render={({ field }) => (
 						<FormItem>
+							<FormLabel>Email</FormLabel>
 							<FormControl>
 								<Input
 									{...field}
@@ -50,14 +51,36 @@ const RegisterForm = () => {
 					name="password"
 					control={form.control}
 					render={({ field }) => (
-						<FormItem className="mt-5">
+						<FormItem>
+							<FormLabel>Contraseña</FormLabel>
 							<FormControl>
 								<Input
 									{...field}
-									placeholder={'Password'}
+									placeholder={'******'}
+									type="password"
+									className={`form-input-text ${form.formState.errors.password && 'form-input-text-validation-error'}`}
+									autoComplete="off"
+									disabled={isPending}
+								></Input>
+							</FormControl>
+							<FormMessage className="form-message-validation-error" />
+						</FormItem>
+					)}
+				/>
+				{/* Confirmar contraseña */}
+				<FormField
+					name="confirmPassword"
+					control={form.control}
+					render={({ field }) => (
+						<FormItem>
+							<FormLabel>Confirmar contraseña</FormLabel>
+							<FormControl>
+								<Input
+									{...field}
+									placeholder={'******'}
 									type="password"
 									className={`form-input-text ${
-										form.formState.errors.password && 'form-input-text-validation-error text-red-600'
+										form.formState.errors.confirmPassword && 'form-input-text-validation-error'
 									}`}
 									autoComplete="off"
 									disabled={isPending}

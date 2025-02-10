@@ -9,7 +9,7 @@ const Navbar = () => {
 	const links = user ? navLinks.user : navLinks.guest;
 
 	return (
-		<nav className="hidden w-full h-[5rem] bg-white fixed top-0 drop-shadow-md sm:flex flex-row items-center justify-center z-30">
+		<nav className="hidden w-full h-[5rem] bg-white fixed top-0 drop-shadow-sm sm:flex flex-row items-center justify-center z-30">
 			<Container className="flex items-center justify-between">
 				<TAGLogo></TAGLogo>
 				{!user && (

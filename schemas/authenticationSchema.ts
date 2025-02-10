@@ -25,6 +25,7 @@ export const loginFormDefaultValues = {
 export const registerFormDefaultValues = {
 	username: '',
 	password: '',
+	confirmPassword: '',
 	roleId: 2,
 };
 
