@@ -11,8 +11,8 @@ export const WEBSITE_ROUTES = {
 };
 
 export const USER_ROUTES = {
-	DASHBOARD: '/dashboard',
-	PROFILE: '/dashboard/profile',
+	HOME: '/dashboard/user',
+	PROFILE: '/dashboard/user/profile',
 };
 
 export const navLinks = {
@@ -23,11 +23,7 @@ export const navLinks = {
 		{ label: 'Entrar', href: WEBSITE_ROUTES.LOGIN },
 	],
 	user: [
-		{ label: 'Inicio', href: USER_ROUTES.DASHBOARD },
+		{ label: 'Inicio', href: USER_ROUTES.HOME },
 		{ label: 'Mi Perfil', href: USER_ROUTES.PROFILE },
 	],
 };
-
-// ================================
-//  Env Variables
-// ================================

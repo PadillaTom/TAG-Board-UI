@@ -1,4 +1,4 @@
-import { EscapeContainer } from '../../components/library/structure';
+import { Container, EscapeContainer } from '../../components/library/structure';
 import { Navbar, TAGSidebar } from '../../components/TAG/navigation';
 
 const WebsiteLayout = ({
@@ -7,11 +7,13 @@ const WebsiteLayout = ({
 	children: React.ReactNode;
 }>) => {
 	return (
-		<main>
+		<>
 			<Navbar></Navbar>
 			<TAGSidebar></TAGSidebar>
-			<EscapeContainer escape={'all'}>{children}</EscapeContainer>
-		</main>
+			<EscapeContainer escape={'all'}>
+				<Container className="bg-background text-foreground">{children}</Container>
+			</EscapeContainer>
+		</>
 	);
 };
 
