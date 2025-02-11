@@ -16,11 +16,11 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const cookieUser = Cookies.get(COOKIE_NAME);
-		if (cookieUser) {
+		const cookieToken = Cookies.get(COOKIE_NAME);
+		if (cookieToken) {
 			try {
-				const decode: JwtCookieData = jwtDecode(cookieUser as string);
-				setUser({ token: decode.token, role: decode.role });
+				const decode: JwtCookieData = jwtDecode(cookieToken as string);
+				setUser({ token: cookieToken, role: decode.role });
 			} catch (error) {
 				console.error('Error parsing user cookie:', error);
 				setUser({
