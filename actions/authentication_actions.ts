@@ -12,6 +12,12 @@ export async function registerUser(body: RegisterFormData): Promise<AuthResponse
 		return response.data;
 	} catch (error) {
 		if (axios.isAxiosError(error) && error.response) {
+			if (error.status === 400) {
+				const errorList = error.response.data.errors.map((e: string) => {
+					return e;
+				});
+				throw new Error(errorList);
+			}
 			throw new Error(error.response.data.message);
 		}
 		throw new Error(SERVER_ERROR);
