@@ -5,7 +5,6 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { WEBSITE_ROUTES } from '@/constants/routes';
 import { ROLE } from '@/constants/app_constants';
-import { ThreeDots } from 'react-loader-spinner';
 
 interface ProtectedRouteProps {
 	children: ReactNode;
@@ -31,7 +30,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
 	if (loading || showLoader) {
 		return (
 			<div className="flex h-screen w-full items-center justify-center">
-				<ThreeDots color="#2e77b8" width="80" visible={true} />
+				<div className="animate-spin w-14 h-14 border-[3px] border-primary border-t-transparent rounded-full"></div>
 			</div>
 		);
 	}
