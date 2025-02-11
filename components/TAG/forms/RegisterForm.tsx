@@ -7,10 +7,10 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
+import { USER_ROUTES } from '../../../constants/routes';
 import { registerUser } from '../../../actions/authentication_actions';
 import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
-import { USER_ROUTES } from '../../../constants/routes';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
@@ -106,9 +106,9 @@ const RegisterForm = () => {
 						</FormItem>
 					)}
 				/>
-				{/* Buttons */}
+				{/* Submit Button */}
 				<Button type="submit" className="button-fill mt-5" disabled={isPending}>
-					Enviar
+					Unirme
 				</Button>
 				{form.formState.errors.root && (
 					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>

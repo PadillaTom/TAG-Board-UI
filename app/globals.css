@@ -10,7 +10,7 @@
 		--card-foreground: 220 15% 15%; /* Dark text for cards */
 		--popover: 0 0% 100%; /* Popover background */
 		--popover-foreground: 220 15% 15%; /* Popover text */
-		--primary: 208 60% 45%; /* Deep blue primary */
+		--primary: 208 60% 45%; /* Deep blue primary in HEX: #2e77b8*/
 		--primary-foreground: 0 0% 100%; /* White text on primary */
 		--secondary: 180 80% 65%; /* Lighter blue secondary */
 		--secondary-foreground: 220 10% 20%; /* Dark text on secondary */

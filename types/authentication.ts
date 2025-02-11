@@ -24,5 +24,5 @@ export interface AuthenticationContextType {
 	user: JwtCookieData;
 	loading: boolean;
 	updateUser: (token: string) => void;
-	logout: () => void;
+	logoutUser: () => void;
 }

@@ -1,6 +1,8 @@
 // ================================
 //  API Constants
 // ================================
+export const NEXT_PUBLIC_REMOTE_BASE_API_URL = '';
+export const NEXT_PUBLIC_LOCAL_BASE_API_URL = 'http://localhost:8080';
 export const BASE_API = '/api/v1';
 export const LOGIN_URL = BASE_API + '/auth/login';
 export const REGISTER_URL = BASE_API + '/auth/register';
