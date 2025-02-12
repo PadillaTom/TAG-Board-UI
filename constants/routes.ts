@@ -11,7 +11,7 @@ export const WEBSITE_ROUTES = {
 };
 
 export const USER_ROUTES = {
-	HOME: '/dashboard/user',
+	DASHBOARD: '/dashboard/user',
 	PROFILE: '/dashboard/user/profile',
 };
 
@@ -23,7 +23,7 @@ export const navLinks = {
 		{ label: 'Entrar', href: WEBSITE_ROUTES.LOGIN },
 	],
 	user: [
-		{ label: 'Inicio', href: USER_ROUTES.HOME },
+		{ label: 'Inicio', href: USER_ROUTES.DASHBOARD },
 		{ label: 'Mi Perfil', href: USER_ROUTES.PROFILE },
 	],
 };
