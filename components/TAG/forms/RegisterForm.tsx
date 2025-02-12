@@ -7,15 +7,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
-import { USER_ROUTES } from '../../../constants/routes';
-import { registerUser } from '../../../actions/authentication_actions';
-import { useAuth } from '@/context/AuthContext';
-import { useRouter } from 'next/navigation';
+import { useRegisterUser } from '../../../hooks/authentication/useRegisterUser';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
-	const { updateUser } = useAuth();
-	const router = useRouter();
+	const { mutate: register } = useRegisterUser();
 
 	const form = useForm<RegisterFormData>({
 		resolver: zodResolver(registerSchema),
@@ -23,18 +19,15 @@ const RegisterForm = () => {
 	});
 
 	const handleSubmit = (values: RegisterFormData) => {
-		startTransition(async () => {
-			registerUser(values)
-				.then((response) => {
-					updateUser(response.jwt);
-					router.push(USER_ROUTES.PROFILE);
-				})
-				.catch((error) =>
+		startTransition(() => {
+			register(values, {
+				onError: (error) => {
 					form.setError('root', {
 						type: 'manual',
-						message: (error as Error).message,
-					}),
-				);
+						message: error.message,
+					});
+				},
+			});
 		});
 	};
 
