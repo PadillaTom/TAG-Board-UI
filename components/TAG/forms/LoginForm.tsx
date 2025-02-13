@@ -1,28 +1,28 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
-import { Input } from '../../ui/input';
+import { useForm } from 'react-hook-form';
+import { LoginFormData, loginFormDefaultValues, loginSchema } from '../../../schemas/authenticationSchema';
+import { useLoginUser } from '../../../hooks/authentication/useLoginUser';
 import { Button } from '../../ui/button';
-import { useRegisterUser } from '../../../hooks/authentication/useRegisterUser';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '../../ui/input';
 import Link from 'next/link';
 import { WEBSITE_ROUTES } from '../../../constants/routes';
 
-const RegisterForm = () => {
+const LoginForm = () => {
 	const [isPending, startTransition] = useTransition();
-	const { mutate: register } = useRegisterUser();
+	const { mutate: login } = useLoginUser();
 
-	const form = useForm<RegisterFormData>({
-		resolver: zodResolver(registerSchema),
-		defaultValues: registerFormDefaultValues,
+	const form = useForm<LoginFormData>({
+		resolver: zodResolver(loginSchema),
+		defaultValues: loginFormDefaultValues,
 	});
 
-	const handleSubmit = (values: RegisterFormData) => {
+	const handleSubmit = (values: LoginFormData) => {
 		startTransition(() => {
-			register(values, {
+			login(values, {
 				onError: (error) => {
 					form.setError('root', {
 						type: 'manual',
@@ -78,41 +78,18 @@ const RegisterForm = () => {
 						</FormItem>
 					)}
 				/>
-				{/* Confirmar contraseña */}
-				<FormField
-					name="confirmPassword"
-					control={form.control}
-					render={({ field }) => (
-						<FormItem>
-							<FormLabel className="label-form-input-text">Confirmar contraseña</FormLabel>
-							<FormControl>
-								<Input
-									{...field}
-									placeholder={'******'}
-									type="password"
-									className={`form-input-text ${
-										form.formState.errors.confirmPassword && 'form-input-text-validation-error'
-									}`}
-									autoComplete="off"
-									disabled={isPending}
-								></Input>
-							</FormControl>
-							<FormMessage className="form-message-validation-error" />
-						</FormItem>
-					)}
-				/>
 				{form.formState.errors.root && (
 					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
 				)}
 				{/* Submit Button */}
 				<Button type="submit" className="button-fill mt-5" disabled={isPending}>
-					Unirme
+					Iniciar Sesión
 				</Button>
 				<span className="border-b border-black opacity-20 w-full mt-3"></span>
 				<div className="flex flex-row gap-1 mt-1 text-sm font-light">
-					<p>Ya eres usuario?</p>
-					<Link href={WEBSITE_ROUTES.LOGIN} className="text-primary">
-						Entra!
+					<p>No tienes cuenta?</p>
+					<Link href={WEBSITE_ROUTES.REGISTER} className="text-primary">
+						Registrate!
 					</Link>
 				</div>
 			</form>
@@ -120,4 +97,4 @@ const RegisterForm = () => {
 	);
 };
 
-export default RegisterForm;
+export default LoginForm;
