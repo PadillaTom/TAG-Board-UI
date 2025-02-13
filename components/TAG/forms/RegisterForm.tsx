@@ -8,6 +8,8 @@ import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
 import { useRegisterUser } from '../../../hooks/authentication/useRegisterUser';
+import Link from 'next/link';
+import { WEBSITE_ROUTES } from '../../../constants/routes';
 
 const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
@@ -99,13 +101,20 @@ const RegisterForm = () => {
 						</FormItem>
 					)}
 				/>
+				{form.formState.errors.root && (
+					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
+				)}
 				{/* Submit Button */}
 				<Button type="submit" className="button-fill mt-5" disabled={isPending}>
 					Unirme
 				</Button>
-				{form.formState.errors.root && (
-					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
-				)}
+				<span className="border-b border-black opacity-20 w-full mt-3"></span>
+				<div className="flex flex-row gap-1 mt-1 text-sm font-light">
+					<p>Ya eres usuario?</p>
+					<Link href={WEBSITE_ROUTES.LOGIN} className="text-primary">
+						Entra!
+					</Link>
+				</div>
 			</form>
 		</Form>
 	);

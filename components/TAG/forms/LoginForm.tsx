@@ -8,6 +8,8 @@ import { useLoginUser } from '../../../hooks/authentication/useLoginUser';
 import { Button } from '../../ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '../../ui/input';
+import Link from 'next/link';
+import { WEBSITE_ROUTES } from '../../../constants/routes';
 
 const LoginForm = () => {
 	const [isPending, startTransition] = useTransition();
@@ -76,13 +78,20 @@ const LoginForm = () => {
 						</FormItem>
 					)}
 				/>
+				{form.formState.errors.root && (
+					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
+				)}
 				{/* Submit Button */}
 				<Button type="submit" className="button-fill mt-5" disabled={isPending}>
 					Iniciar Sesión
 				</Button>
-				{form.formState.errors.root && (
-					<FormMessage className="form-response-error">{form.formState.errors.root.message}</FormMessage>
-				)}
+				<span className="border-b border-black opacity-20 w-full mt-3"></span>
+				<div className="flex flex-row gap-1 mt-1 text-sm font-light">
+					<p>No tienes cuenta?</p>
+					<Link href={WEBSITE_ROUTES.REGISTER} className="text-primary">
+						Registrate!
+					</Link>
+				</div>
 			</form>
 		</Form>
 	);
