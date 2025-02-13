@@ -4,8 +4,8 @@ import { WEBSITE_ROUTES } from '../../constants/routes';
 
 const HomePage = () => {
 	return (
-		<div className="flex flex-col items-center pt-6 md:pt-16">
-			<div className="h-[80vh] min-h-[550px] flex flex-col items-center justify-center text-center gap-6">
+		<div className="flex flex-col items-center pt-6 md:pt-16 lg:pt-20">
+			<div className="h-[75vh] md:h-[70vh] lg:h-[68vh] min-h-[550px] flex flex-col items-center justify-center text-center gap-6">
 				{/* Encabezado */}
 				<h1 className="text-4xl font-bold md:text-5xl">
 					Gestiona tus proyectos con <span className="text-primary">TAG Board</span>
@@ -105,7 +105,7 @@ const HomePage = () => {
 					</p>
 					<div>
 						<Link
-							href={WEBSITE_ROUTES.LOGIN}
+							href={WEBSITE_ROUTES.REGISTER}
 							className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:opacity-90 transition"
 						>
 							Crear Cuenta Gratis
