@@ -3,7 +3,7 @@
 import React, { useTransition } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { LoginFormData, loginFormDefaultValues, loginSchema } from '../../../schemas/authenticationSchema';
+import { LoginRequest, loginFormDefaultValues, loginSchema } from '../../../schemas/authenticationSchema';
 import { useLoginUser } from '../../../hooks/authentication/useLoginUser';
 import { Button } from '../../ui/button';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
@@ -15,12 +15,12 @@ const LoginForm = () => {
 	const [isPending, startTransition] = useTransition();
 	const { mutate: login } = useLoginUser();
 
-	const form = useForm<LoginFormData>({
+	const form = useForm<LoginRequest>({
 		resolver: zodResolver(loginSchema),
 		defaultValues: loginFormDefaultValues,
 	});
 
-	const handleSubmit = (values: LoginFormData) => {
+	const handleSubmit = (values: LoginRequest) => {
 		startTransition(() => {
 			login(values, {
 				onError: (error) => {

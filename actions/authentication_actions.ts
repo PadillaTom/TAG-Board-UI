@@ -1,10 +1,10 @@
 import axios from 'axios';
 import { LOGIN_URL, REGISTER_URL, SERVER_ERROR } from '../constants/app_constants';
 import { AuthResponse } from '../types/authentication';
-import { LoginFormData, RegisterFormData } from '../schemas/authenticationSchema';
+import { LoginRequest, RegisterRequest } from '../schemas/authenticationSchema';
 import publicApi from '../lib/api/publicApi';
 
-export async function registerUser(body: RegisterFormData): Promise<AuthResponse> {
+export async function registerUser(body: RegisterRequest): Promise<AuthResponse> {
 	try {
 		const response = await publicApi.post<AuthResponse>(`${REGISTER_URL}`, body);
 		return response.data;
@@ -22,7 +22,7 @@ export async function registerUser(body: RegisterFormData): Promise<AuthResponse
 	}
 }
 
-export async function loginUser(body: LoginFormData): Promise<AuthResponse> {
+export async function loginUser(body: LoginRequest): Promise<AuthResponse> {
 	try {
 		const response = await publicApi.post<AuthResponse>(`${LOGIN_URL}`, body);
 		return response.data;

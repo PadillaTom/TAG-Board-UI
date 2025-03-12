@@ -29,5 +29,5 @@ export const registerFormDefaultValues = {
 	roleId: 2,
 };
 
-export type LoginFormData = z.infer<typeof loginSchema>;
-export type RegisterFormData = z.infer<typeof registerSchema>;
+export type LoginRequest = z.infer<typeof loginSchema>;
+export type RegisterRequest = z.infer<typeof registerSchema>;

@@ -4,7 +4,7 @@ import React, { useTransition } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { RegisterFormData, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
+import { RegisterRequest, registerFormDefaultValues, registerSchema } from '../../../schemas/authenticationSchema';
 import { Input } from '../../ui/input';
 import { Button } from '../../ui/button';
 import { useRegisterUser } from '../../../hooks/authentication/useRegisterUser';
@@ -15,12 +15,12 @@ const RegisterForm = () => {
 	const [isPending, startTransition] = useTransition();
 	const { mutate: register } = useRegisterUser();
 
-	const form = useForm<RegisterFormData>({
+	const form = useForm<RegisterRequest>({
 		resolver: zodResolver(registerSchema),
 		defaultValues: registerFormDefaultValues,
 	});
 
-	const handleSubmit = (values: RegisterFormData) => {
+	const handleSubmit = (values: RegisterRequest) => {
 		startTransition(() => {
 			register(values, {
 				onError: (error) => {
